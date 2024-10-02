@@ -68,3 +68,15 @@ QUARIES:
   
 1. Write a SQL query to fetch “FIRST_NAME” from the Student table in upper case and use ALIAS name as STUDENT_NAME.
   select upper(first_name) as student_name from student;
+
+2. Write a SQL query to fetch unique values of MAJOR Subjects from Student table.
+    select distinct major from student;
+
+3. Write a SQL query to print the first 3 characters of FIRST_NAME from Student table.
+    SELECT SUBSTR(FIRST_NAME, 1, 3) FROM STUDENT;
+
+4. Write a SQL query to find the position of alphabet (‘a’) int the first name column ‘Shivansh’ from Student table.
+    select instr(First_name, 'a') from Student where First_Name= 'Shivansh';
+
+5. Write a SQL query that fetches the unique values of MAJOR Subjects from Student table and print its length.
+    select distinct major, length(major) from student;
