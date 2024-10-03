@@ -1,3 +1,5 @@
+  -- ***I'm Learning Oracle SQL Using SQL Plus:***--   
+
 **TABLE CREATION:**
 CREATE TABLE STUDENT(
 STUDENT_ID INT PRIMARY KEY,
@@ -80,3 +82,15 @@ QUARIES:
 
 5. Write a SQL query that fetches the unique values of MAJOR Subjects from Student table and print its length.
     select distinct major, length(major) from student;
+
+6. Write a SQL query to print FIRST_NAME from the Student table after replacing ‘a’ with ‘A’.
+    select replace(first_name, 'a', 'A') from STUDENT;
+
+7. Write a SQL query to print the FIRST_NAME and LAST_NAME from Student table into single column COMPLETE_NAME.
+    select first_name || ' ' || last_name as complete_name from student;
+
+8. Write a SQL query to print all Student details from Student table order by FIRST_NAME Ascending and MAJOR Subject descending .
+    select * from student order by first_name, major desc;
+
+9. Write a SQL query to print details of the Students with the FIRST_NAME as ‘Prem’ and ‘Shivansh’ from Student table.
+    select * from student where first_name in('Prem', 'Shivansh');
