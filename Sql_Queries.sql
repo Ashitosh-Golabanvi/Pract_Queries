@@ -94,3 +94,23 @@ QUARIES:
 
 9. Write a SQL query to print details of the Students with the FIRST_NAME as ‘Prem’ and ‘Shivansh’ from Student table.
     select * from student where first_name in('Prem', 'Shivansh');
+
+10. Write a SQL query to print details of the Students excluding FIRST_NAME as ‘Prem’ and ‘Shivansh’ from Student table.
+    select * from student where First_Name not in('Prem', 'Shivansh');
+
+11. Write a SQL query to print details of the Students whose FIRST_NAME ends with ‘a’.
+    select * from student where First_Name like '%a';
+
+12. Write an SQL query to print details of the Students whose FIRST_NAME ends with ‘a’ and contains six alphabets.
+    select * from student where First_Name like '%_____a';
+
+13. Write an SQL query to print details of the Students whose GPA lies between 9.00 and 9.99.
+    select * from student where GPA between 9.00 And 9.99;
+
+14. Write an SQL query to fetch the count of Students having Major Subject ‘Computer Science’.
+    SELECT COUNT(*) AS TOTAL FROM STUDENT WHERE MAJOR='COMPUTER SCIENCE';
+
+15. Write an SQL query to fetch Students full names with GPA >= 8.5 and <= 9.5.
+    SELECT FIRST_NAME || LAST_NAME FROM STUDENT WHERE GPA BETWEEN 8.5 AND 9.5;
+
+
