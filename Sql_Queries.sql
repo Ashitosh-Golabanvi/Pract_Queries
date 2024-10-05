@@ -113,4 +113,37 @@ QUARIES:
 15. Write an SQL query to fetch Students full names with GPA >= 8.5 and <= 9.5.
     SELECT FIRST_NAME || LAST_NAME FROM STUDENT WHERE GPA BETWEEN 8.5 AND 9.5;
 
+16. Write an SQL query to fetch the no. of Students for each MAJOR subject in the descending order.
+    SELECT MAJOR, COUNT(MAJOR) FROM STUDENT GROUP BY MAJOR ORDER BY COUNT(MAJOR) DESC;
+
+17. Write an SQL query to show only even rows from Student table.
+    SELECT * FROM STUDENT WHERE MOD(STUDENT_ID, 2) = 0;
+
+18. Write an SQL query to show only odd rows from Student table.
+    SELECT * FROM STUDENT WHERE MOD(STUDENT_ID, 2) != 0;
+
+
+***JOIN QUARIES:***
+
+
+19. Display the details of students who have received scholarships, including their names, scholarship amounts, and scholarship dates.
+    SELECT STUDENT.FIRST_NAME,
+    STUDENT.LAST_NAME,
+    SCHOLARSHIP.SCHOLARSHIP_AMOUNT,
+    SCHOLARSHIP.SCHOLARSHIP_DATE
+    FROM STUDENT INNER JOIN SCHOLARSHIP ON
+    STUDENT.STUDENT_ID = SCHOLARSHIP.STUDENT_REF_ID;
+
+20. List all students and their scholarship amounts if they have received any. If a student has not received a scholarship, display NULL for the scholarship details.
+    SELECT STUDENT.FIRST_NAME,
+    STUDENT.LAST_NAME,
+    SCHOLARSHIP.SCHOLARSHIP_AMOUNT
+    FROM STUDENT LEFT JOIN
+    SCHOLARSHIP ON 
+    STUDENT.STUDENT_ID = SCHOLARSHIP.STUDENT_REF_ID;
+
+
+
+
+
 
