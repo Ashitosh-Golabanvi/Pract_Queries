@@ -129,9 +129,18 @@ QUARIES:
 27. Write an SQL query to list STUDENT_ID who does not get Scholarship.
     SELECT STUDENT_ID FROM STUDENT WHERE STUDENT_ID NOT IN(SELECT STUDENT_REF_ID FROM SCHOLARSHIP);
 
+29. Write an SQL query to fetch the MAJOR subject that have less than 4 people in it.
+    SELECT MAJOR, COUNT(MAJOR) AS TOATAL_MAJOR FROM STUDENT GROUP BY MAJOR HAVING COUNT(MAJOR) < 4;
 
+30. Write an SQL query to show all MAJOR subject along with the number of people in there.
+    SELECT MAJOR, COUNT(MAJOR) AS TOTAL_MAJOR FROM STUDENT GROUP BY MAJOR;
 
-  
+31. Write an SQL query to show the last record from a table.
+    SELECT * FROM STUDENT WHERE STUDENT_ID = (SELECT MAX(STUDENT_ID) FROM STUDENT);
+
+32. Write an SQL query to fetch the first row of a table.
+    SELECT * FROM STUDENT WHERE STUDENT_ID = (SELECT MIN(STUDENT_ID) FROM STUDENT);
+
 ***JOIN QUARIES:***
 
 
