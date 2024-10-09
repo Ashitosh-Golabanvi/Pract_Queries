@@ -141,6 +141,20 @@ QUARIES:
 32. Write an SQL query to fetch the first row of a table.
     SELECT * FROM STUDENT WHERE STUDENT_ID = (SELECT MIN(STUDENT_ID) FROM STUDENT);
 
+33. Write an SQL query to fetch the last five records from a table.
+    SELECT * FROM STUDENT ORDER BY STUDENT_ID DESC LIMIT 5;
+
+37. Write an SQL query to fetch MAJOR subjects along with the max GPA in each of these MAJOR subjects.
+    SELECT MAJOR, COUNT(GPA) AS TOTAL_GPA FROM STUDENT GROUP BY MAJOR;
+
+39. Write an SQL query to show the current date.
+    SELECT CURDATE();
+
+40. 39. Write an SQL query to show the current time.
+    SELECT NOW();
+
+
+
 ***JOIN QUARIES:***
 
 
