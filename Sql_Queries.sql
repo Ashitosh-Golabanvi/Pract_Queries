@@ -158,7 +158,8 @@ QUARIES:
 ***JOIN QUARIES:***
 
 
-19. Display the details of students who have received scholarships, including their names, scholarship amounts, and scholarship dates.
+  Inner Join
+1. Display the details of students who have received scholarships, including their names, scholarship amounts, and scholarship dates.
     SELECT STUDENT.FIRST_NAME,
     STUDENT.LAST_NAME,
     SCHOLARSHIP.SCHOLARSHIP_AMOUNT,
@@ -166,7 +167,14 @@ QUARIES:
     FROM STUDENT INNER JOIN SCHOLARSHIP ON
     STUDENT.STUDENT_ID = SCHOLARSHIP.STUDENT_REF_ID;
 
-20. List all students and their scholarship amounts if they have received any. If a student has not received a scholarship, display NULL for the scholarship details.
+2. Display the details of students who have received scholerships, including thier names, scholarship amount, and scholarship dates And program name.
+    SELECT S.FIRST_NAME, SC.SCHOLARSHIP_AMOUNT, SC.SCHOLARSHIP_DATE, P.PROGRAM_NAME
+    FROM STUDENT S INNER JOIN SCHOLARSHIP SC ON S.STUDENT_ID = SC.STUDENT_REF_ID 
+    INNER JOIN PROGRAM P ON S.STUDENT_ID = P.STUDENT_REF_ID;
+
+
+  Left Join
+1. List all students and their scholarship amounts if they have received any. If a student has not received a scholarship, display NULL for the scholarship details.
     SELECT STUDENT.FIRST_NAME,
     STUDENT.LAST_NAME,
     SCHOLARSHIP.SCHOLARSHIP_AMOUNT
@@ -174,10 +182,39 @@ QUARIES:
     SCHOLARSHIP ON 
     STUDENT.STUDENT_ID = SCHOLARSHIP.STUDENT_REF_ID;
 
-21. 
+2. List all students, their scholarship amounts (if they have received any), and the programs they are enrolled in (if available). If a student has not received a scholarship or is not enrolled in a program, display NULL for those details
+    SELECT S.FIRST_NAME, S.LAST_NAME,
+    SC.SCHOLARSHIP_AMOUNT, P.PROGRAM_NAME 
+    FROM STUDENT S 
+    LEFT JOIN SCHOLARSHIP SC ON S.STUDENT_ID = SC.STUDENT_REF_ID 
+    LEFT JOIN PROGRAM P ON S.STUDENT_ID = P.STUDENT_REF_ID;
+
+  
+  RIGHT JOIN
+1. List all scholarships and the students who have received them. If a scholarship has not been awarded to any student, display NULL for the student details.
+    SELECT S.FIRST_NAME, S.LAST_NAME,
+    SC.SCHOLARSHIP_AMOUNT
+    FROM STUDENT S RIGHT JOIN SCHOLARSHIP SC ON
+    S.STUDENT_ID = SC.STUDENT_REF_ID;
+
+2. List all scholarships, the students who have received them, and the programs they are enrolled in. If a scholarship has not been awarded to any student or if a student is not enrolled in a program, display NULL for those student details.
+    SELECT S.FIRST_NAME, S.LAST_NAME,
+    SC.SCHOLARSHIP_AMOUNT, P.PROGRAM_NAME
+    FROM STUDENT S RIGHT JOIN SCHOLARSHIP SC ON S.STUDENT_ID = SC.STUDENT_REF_ID
+    RIGHT JOIN PROGRAM P ON S.STUDENT_ID = P.STUDENT_REF_ID;
 
 
+--"""""" iN "MYSQL" FULL OUTER JOIN DOESN'T SUPPORT FOR THAT WE NEED TO USE UNION AND LEFT JOIN AND RIGHT JOIN ":""""""--
 
+-- IN REMAINING FOLLOWING QUERIES WORKS, FOR INTERVIEW PERPOSE U JUST REMEMBER THESE FOLLOWING QUERIES:-- 
+  OUTER JOIN OR FULL JOIN
+1. Display the details of all students and their scholarships, including their names, scholarship amounts, and scholarship dates. If a student has not received a scholarship, display NULL for the scholarship details. If there is a scholarship without a matching student, display NULL for the student details
+    SELECT S.FIRST_, S, S.LAST_NAME,
+    SC.SCHOLARSHIP_AMOUNT FROM
+    STUDENT S INNER JOIN SCHOLARSHIP SC ON
+    S.STUDENT_ID = SC.STUDENT_REF_ID;
 
+2. WE CAN ACHIEVE THE TWO OUTER JOINS BY USING LEFT JOIN AND RIGHT JOIN AND UNIOIN FUNCTION.
+   KNOW THIS MUCH IT'S ENOUGH UP FOR INTERVIEW PERPOSE.
 
 
