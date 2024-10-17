@@ -1,4 +1,4 @@
-  -- ***I'm Learning MYSQL Using MYSQL WORKBENCH:***--   
+-- ***I'm Learning MYSQL Using MYSQL WORKBENCH:***--   
 
 **TABLE CREATION:**
 CREATE TABLE STUDENT(
