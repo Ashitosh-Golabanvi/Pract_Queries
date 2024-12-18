@@ -79,7 +79,7 @@ QUARIES:
     select replace(first_name, 'a', 'A') from STUDENT;
 
 7. Write a SQL query to print the FIRST_NAME and LAST_NAME from Student table into single column COMPLETE_NAME.
-    select first_name || ' ' || last_name as complete_name from student;
+    select concat(first_name,' ', last_name) as Complete_Name from student;
 
 8. Write a SQL query to print all Student details from Student table order by FIRST_NAME Ascending and MAJOR Subject descending .
     select * from student order by first_name, major desc;
