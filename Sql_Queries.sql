@@ -59,6 +59,29 @@ INSERT INTO SCHOLARSHIP (STUDENT_REF_ID, SCHOLARSHIP_AMOUNT, SCHOLARSHIP_DATE) V
 
 
 QUARIES:
+
+
+Agreegate Functions Queries:
+
+1. Find the number of employees in a table.
+   select count(*) from emp; 
+
+2. Max:  Find the second highest salary.
+         select max(salary) from emp where salary < (select max(salary) from emp);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 1. Write a SQL query to fetch “FIRST_NAME” from the Student table in upper case and use ALIAS name as STUDENT_NAME.
   select upper(first_name) as student_name from student;
@@ -150,9 +173,11 @@ QUARIES:
 39. Write an SQL query to show the current date.
     SELECT CURDATE();
 
-40. 39. Write an SQL query to show the current time.
+40. Write an SQL query to show the current time.
     SELECT NOW();
 
+41. Get the names of all employees whose salary is greater than 50,000.
+    select name form emp where salary > 50.000;
 
 
 ***JOIN QUARIES:***
