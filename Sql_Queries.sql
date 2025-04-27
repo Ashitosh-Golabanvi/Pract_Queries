@@ -66,11 +66,19 @@ Agreegate Functions Queries:
 1. Find the number of employees in a table.
    select count(*) from emp; 
 
-2. Max:  Find the second highest salary.
+2. Find the total salary paid to all employees.
+   select sum(salary) from emp;
+
+3. Find the average salary of employees.
+   select avg(salary) from emp;
+
+4. Find the minimum and maximum salary in the company.
+    select min(salary) as minimum, max(salary) as maximum from emp;
+
+
+
+2. * Max:  Find the second highest salary.
          select max(salary) from emp where salary < (select max(salary) from emp);
-
-
-
 
 
 
